@@ -1,0 +1,28 @@
+﻿<div class="mb-4">
+    <div class="container-fluid">
+        <h1 class="display-5 fw-bold">ViewComponentResult</h1>
+        <p class="fs-4">
+            ViewComponentResult sınıfını normalde Component.InvokeAsync() ile razor sayfamızda kullanırız.
+            Farklı şekilde kullanımı ise Ajax ile ilgili metodu çağırıp sayfamıza ilgili görünümü ekleyebiliriz.
+        </p>
+        <pre class="code-line">
+        <code>
+public IActionResult ViewComponentExample()
+{
+    return ViewComponent("ViewComponentExample");
+}
+            </code>
+        </pre>
+        <p class="fs-4">
+            Ajax ile kullanımı aşağıdaki gibidir.
+        </p>
+        <pre class="code-line">
+        <code>
+    var componentContainer = $("#content-body");
+    var refreshComponent = function () {
+        $.get("/Home/ViewComponentResult", function (data) { componentContainer.html(data); });
+    };
+            </code>
+</pre>
+    </div>
+</div>

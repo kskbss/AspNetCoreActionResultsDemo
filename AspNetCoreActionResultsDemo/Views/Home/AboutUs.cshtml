@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+}
+<div class="px-5 mb-4">
+    <div class="container-fluid">
+        <h1 class="display-5 fw-bold">ViewResultWithName</h1>
+        <p class="col-md-8 fs-4">En temel dönüş yöntemidir. Yaptığımız işlem sonucunda View’ımıza dönüş sağlar.</p>
+        <pre class="code-line">
+        <code>
+    public IActionResult Index()
+    {
+        return View();
+    }
+            </code>
+        </pre>
+        <p>
+            Örnekteki gibi View’a hiçbir parametre vermezsek Views klasörü içinde Controller adımızla aynı olan klasörde Action adımızla aynı olan “Index.cshtml” View’ına yönlendirir. Parametre olarak viewName ve object gönderebiliriz.
+        </p>
+        <pre class="code-line">
+        <code>
+    public IActionResult Index()
+    {
+        return View("AboutUs");//Views/Home/AboutUs.cshtml View’ına yönlendirir.
+    }
+            </code>
+        </pre>
+    </div>
+</div>

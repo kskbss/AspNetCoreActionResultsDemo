@@ -1,0 +1,39 @@
+﻿<div class="mb-4">
+    <div class="container-fluid">
+        <p class="fs-4">
+            <b>PartialViewResult</b> sınıfı (kısa yöntem: <b>PartialView();</b>) Bazı durumlada kod tekrarını önlemek için veya sayfamızdaki bazı bölümlerde AJAX ile güncelleme yapmak için tercih edilir.
+            Sadece ilgili bölüm kodlarını döndürür. Kullanım şekli aşağıdaki gibidir.
+        </p>
+        <pre class="code-line">
+        <code>
+    public IActionResult PartialViewResult()
+    {
+        return PartialView();
+    }
+            </code>
+        </pre>
+        <p class="fs-4">
+            Örnekteki gibi PartialView’a hiçbir parametre vermezsek Views klasörü içinde Controller adımızla aynı olan klasörde Action adımızla aynı olan “PartialViewResult.cshtml” View’ına yönlendirir burada bulamazsa Shared altında arar. Parametre olarak viewName ve object gönderebiliriz.
+        </p>
+        <p class="fs-4">
+            Razor sayfalarında kullanımı aşağıdaki gibidir. Parametre olarak nesne gönderilebilir.
+        </p>
+        <pre class="code-line">
+        <code>
+    @@Html.Partial("PartialViewResult")
+            </code>
+        </pre>
+        <p class="fs-4">
+            Ajax ile kullanımı test etmek için <a href="#" onclick="refreshPartialView();">tıklayın</a>
+        </p>
+        <pre class="code-line">
+        <code>
+    var container = $("#modal-body");
+    var refreshComponent = function () {
+        $.get("/Home/PartialViewResult", function (data) { container.html(data); });
+    };
+
+            </code>
+</pre>
+    </div>
+</div>
