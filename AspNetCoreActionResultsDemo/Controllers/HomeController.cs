@@ -343,6 +343,10 @@ namespace AspNetCoreActionResultsDemo.Controllers
         #endregion
 
         #region Custom Action Result
+        /// <summary>
+        /// Custom Javascript REsult Örneği
+        /// </summary>
+        /// <returns>Javscript Code</returns>
         public JavascriptResult JavascriptResult()
         {
             string alert ="alert('Custom Action Result')";
